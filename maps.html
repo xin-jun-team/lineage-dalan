@@ -14,15 +14,15 @@
     .nav-btn:hover{color:var(--gold);background:rgba(240,192,64,.06);}
     .nav-btn.active{color:var(--gold);border-bottom-color:var(--gold);}
     .section-block{padding-top:32px;}
-    .section-title{display:flex;align-items:center;gap:12px;padding:12px 18px;border-radius:8px 8px 0 0;font-size:16px;font-weight:900;letter-spacing:2px;color:#fff;}
-    .section-title.blue  {background:linear-gradient(135deg,#1565c0,#1a73e8);}
-    .section-title.purple{background:linear-gradient(135deg,#6a1b9a,#8e24aa);}
-    .section-title.teal  {background:linear-gradient(135deg,#00695c,#00897b);}
-    .section-title.red   {background:linear-gradient(135deg,#b71c1c,#c62828);}
-    .section-title.orange{background:linear-gradient(135deg,#bf360c,#e64a19);}
-    .section-title.yellow{background:linear-gradient(135deg,#e65100,#f57c00);}
-    .section-title.green {background:linear-gradient(135deg,#1b5e20,#2e7d32);}
-    .section-title.indigo{background:linear-gradient(135deg,#283593,#3949ab);}
+    .map-sec-title{display:flex;align-items:center;gap:12px;padding:12px 18px;border-radius:8px 8px 0 0;font-size:15px;font-weight:900;letter-spacing:2px;color:#fff;font-family:inherit;-webkit-text-fill-color:#fff;background-clip:unset;-webkit-background-clip:unset;}
+    .map-sec-title.blue  {background:linear-gradient(135deg,#06001a,#0a1050)!important;}
+    .map-sec-title.purple{background:linear-gradient(135deg,#18001a,#2d0055)!important;}
+    .map-sec-title.teal  {background:linear-gradient(135deg,#001a1a,#003040)!important;}
+    .map-sec-title.red   {background:linear-gradient(135deg,#1a0008,#3a0010)!important;}
+    .map-sec-title.orange{background:linear-gradient(135deg,#1a0a00,#3a1800)!important;}
+    .map-sec-title.yellow{background:linear-gradient(135deg,#1a0e00,#3a2400)!important;}
+    .map-sec-title.green {background:linear-gradient(135deg,#001a08,#003a15)!important;}
+    .map-sec-title.indigo{background:linear-gradient(135deg,#060012,#140028)!important;}
     .section-body{background:var(--bg2);border:1px solid var(--border);border-top:none;border-radius:0 0 8px 8px;padding:18px;margin-bottom:24px;box-shadow:0 2px 8px rgba(0,0,0,.3);}
     .map-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;}
     .map-card{border:1px solid var(--border);border-radius:8px;padding:14px 16px;background:var(--bg3);transition:box-shadow .2s,transform .2s;}
@@ -99,7 +99,7 @@
 
   <!-- ===== 一般地監 ===== -->
   <div class="section-block" id="general">
-    <div class="section-title blue">⚔️ 一般地監（初 / 中階）</div>
+    <div class="map-sec-title blue">⚔️ 一般地監（初 / 中階）</div>
     <div class="section-body">
       <div class="map-grid">
 
@@ -229,7 +229,7 @@
 
   <!-- ===== 夢幻之島 ===== -->
   <div class="section-block" id="fantasy">
-    <div class="section-title purple">🦄 夢幻之島（特殊掉落）<span style="font-size:12px;font-weight:400;margin-left:8px;opacity:0.75;">建議等級 LV.54</span></div>
+    <div class="map-sec-title purple">🦄 夢幻之島（特殊掉落）<span style="font-size:12px;font-weight:400;margin-left:8px;opacity:0.75;">建議等級 LV.54</span></div>
     <div class="section-body">
       <div class="loot-grid">
         <div class="loot-item"><span class="c-proof">夢幻之島證明</span></div>
@@ -243,7 +243,7 @@
 
   <!-- ===== 時空裂痕 ===== -->
   <div class="section-block" id="rift">
-    <div class="section-title teal">🌀 時空裂痕（周一、周三 限時 3 小時）</div>
+    <div class="map-sec-title teal">🌀 時空裂痕（周一、周三 限時 3 小時）</div>
     <div class="section-body">
       <div class="time-badge">⏱️ 開放時間：11:00–14:00 ／ 20:00–23:00</div>
       <div class="tip-bar teal">
@@ -273,7 +273,7 @@
 
   <!-- ===== 傲慢之塔 ===== -->
   <div class="section-block" id="tower">
-    <div class="section-title red">🗼 傲慢之塔（1F ~ 10F）<span style="font-size:12px;font-weight:400;margin-left:8px;opacity:0.75;">建議等級 LV.54</span></div>
+    <div class="map-sec-title red">🗼 傲慢之塔（1F ~ 10F）<span style="font-size:12px;font-weight:400;margin-left:8px;opacity:0.75;">建議等級 LV.54</span></div>
     <div class="section-body">
       <div class="tip-bar red">
         <span>💡</span>
@@ -311,7 +311,7 @@
 
   <!-- ===== 高階地圖 ===== -->
   <div class="section-block" id="advanced">
-    <div class="section-title orange">🔥 高階地圖（古代島 / 高崙）<span style="font-size:12px;font-weight:400;margin-left:8px;opacity:0.75;">建議等級 LV.58</span></div>
+    <div class="map-sec-title orange">🔥 高階地圖（古代島 / 高崙）<span style="font-size:12px;font-weight:400;margin-left:8px;opacity:0.75;">建議等級 LV.58</span></div>
     <div class="section-body">
       <div class="two-col">
         <div class="map-card">
@@ -338,7 +338,7 @@
 
   <!-- ===== VIP 專屬地圖 ===== -->
   <div class="section-block" id="vip">
-    <div class="section-title yellow">👑 VIP 專屬地圖</div>
+    <div class="map-sec-title yellow">👑 VIP 專屬地圖</div>
     <div class="section-body">
 
       <div class="vip-sub">
@@ -420,7 +420,7 @@
 
   <!-- ===== 專精地圖 ===== -->
   <div class="section-block" id="mastery">
-    <div class="section-title green">❄️ 專精地圖 — 冰天雪地（每天限時 2 小時）</div>
+    <div class="map-sec-title green">❄️ 專精地圖 — 冰天雪地（每天限時 2 小時）</div>
     <div class="section-body">
       <div class="tip-bar green">
         <span>💡</span>
@@ -481,7 +481,7 @@
 
   <!-- ===== 羅馬地圖 ===== -->
   <div class="section-block" id="rome">
-    <div class="section-title indigo">🏛️ 羅馬地圖（專屬內掛）</div>
+    <div class="map-sec-title indigo">🏛️ 羅馬地圖（專屬內掛）</div>
     <div class="section-body">
       <div class="two-col" style="margin-bottom:20px;">
 
