@@ -10,6 +10,7 @@
     body { background-image:url('img-hero-bg.jpg');background-size:cover;background-position:center center;background-attachment:fixed; }
     .section     { background:rgba(10,8,8,0.82)  !important; }
     .section-alt { background:rgba(15,12,12,0.88) !important; }
+    html{scroll-padding-top:120px;}
   </style>
 </head>
 <body>
@@ -43,12 +44,19 @@
   </div>
 
   <div class="feature-detail-content">
+<div class="page-layout">
+<nav class="left-toc">
+  <div class="left-toc-heading">章節目錄</div>
+  <a class="left-toc-btn active" data-sec="hex-upgrade" href="#hex-upgrade">🔯 升級資訊</a>
+  <a class="left-toc-btn" data-sec="hex-table" href="#hex-table">📊 能力等級表</a>
+</nav>
+<div class="page-main">
 
     <!-- 升級資訊 -->
     <div style="background:linear-gradient(135deg,#131010,#0d0b0b);border:1px solid rgba(147,52,230,.28);border-radius:10px;overflow:hidden;margin-bottom:24px">
       <div style="background:linear-gradient(90deg,rgba(147,52,230,.18),transparent);padding:14px 20px;border-bottom:1px solid rgba(147,52,230,.2);display:flex;align-items:center;gap:10px">
         <span style="font-size:1.25em">🛠️</span>
-        <h3 style="margin:0;color:rgb(147,52,230);font-size:1.05em;letter-spacing:1px;font-weight:700">六芒星升級資訊</h3>
+        <h3 id="hex-upgrade" style="margin:0;color:rgb(147,52,230);font-size:1.05em;letter-spacing:1px;font-weight:700">六芒星升級資訊</h3>
       </div>
       <div style="padding:18px 20px">
         <div style="display:flex;gap:16px;flex-wrap:wrap">
@@ -68,7 +76,7 @@
     <div style="background:linear-gradient(135deg,#131010,#0d0b0b);border:1px solid rgba(147,52,230,.28);border-radius:10px;overflow:hidden;margin-bottom:24px">
       <div style="background:linear-gradient(90deg,rgba(147,52,230,.18),transparent);padding:14px 20px;border-bottom:1px solid rgba(147,52,230,.2);display:flex;align-items:center;gap:10px">
         <span style="font-size:1.25em">📋</span>
-        <h3 style="margin:0;color:rgb(147,52,230);font-size:1.05em;letter-spacing:1px;font-weight:700">徽章等級能力表</h3>
+        <h3 id="hex-table" style="margin:0;color:rgb(147,52,230);font-size:1.05em;letter-spacing:1px;font-weight:700">徽章等級能力表</h3>
       </div>
       <div style="padding:18px 20px">
         <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse">
@@ -95,6 +103,7 @@
     </div>
 
   </div>
+</div></div>
 
   <div class="feature-nav-btns">
     <a href="items.html" class="btn-outline">← 道具介紹</a>
@@ -137,6 +146,9 @@
   </div>
 </footer>
 <script src="main.js"></script>
+<script>
+(function(){const bs=document.querySelectorAll('.left-toc-btn[data-sec]');const ids=['hex-upgrade','hex-table'];window.addEventListener('scroll',()=>{let c=ids[0];ids.forEach(id=>{const el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<120)c=id;});bs.forEach(b=>b.classList.toggle('active',b.dataset.sec===c));},{passive:true});})();
+</script>
 <button id="backToTop" title="回到頂部">&#8679;</button>
 </body>
 </html>

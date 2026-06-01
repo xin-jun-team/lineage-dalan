@@ -69,7 +69,14 @@
 </div>
 
 <div class="container" style="padding-top:40px;padding-bottom:80px">
-
+<div class="page-layout">
+<nav class="left-toc">
+  <div class="left-toc-heading">章節目錄</div>
+  <a class="left-toc-btn active" data-sec="section-collection" href="#section-collection">🏆 BOSS 收藏</a>
+  <a class="left-toc-btn" data-sec="section-schedule" href="#section-schedule">⏰ 登場時刻表</a>
+  <a class="left-toc-btn" data-sec="section-drops" href="#section-drops">📦 各等級掉落物</a>
+</nav>
+<div class="page-main">
   <!-- ══ SECTION 0: BOSS 收藏 ══ -->
   <div id="section-collection" style="scroll-margin-top:100px">
     <div class="section-header" style="margin-bottom:28px">
@@ -517,6 +524,7 @@
       </table>
     </div>
   </div>
+</div></div>
 
 </div>
 
@@ -570,6 +578,9 @@
   window.addEventListener('scroll', update, {passive:true});
   update();
 })();
+</script>
+<script>
+(function(){const bs=document.querySelectorAll('.left-toc-btn[data-sec]');const ids=['section-collection','section-schedule','section-drops'];window.addEventListener('scroll',()=>{let c=ids[0];ids.forEach(id=>{const el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<120)c=id;});bs.forEach(b=>b.classList.toggle('active',b.dataset.sec===c));},{passive:true});})();
 </script>
 <button id="backToTop" title="回到頂部">&#8679;</button>
 </body></html>

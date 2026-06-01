@@ -42,7 +42,15 @@
 </div>
 
 <div class="container" style="padding-top:40px;padding-bottom:80px">
-
+<div class="page-layout">
+<nav class="left-toc">
+  <div class="left-toc-heading">章節目錄</div>
+  <a class="left-toc-btn active" data-sec="vip-perks" href="#vip-perks">✨ VIP特權</a>
+  <a class="left-toc-btn" data-sec="vip-valley" href="#vip-valley">🌲 隱藏之谷</a>
+  <a class="left-toc-btn" data-sec="vip-tower" href="#vip-tower">🏰 支配之塔</a>
+  <a class="left-toc-btn" data-sec="vip-battle" href="#vip-battle">⚔️ 烽火戰場</a>
+</nav>
+<div class="page-main">
   <!-- 章節目錄 -->
   <div class="toc-bar">
     <button class="toc-btn active" onclick="tocJump('vip-perks')">✨ VIP特權</button>
@@ -197,6 +205,7 @@
     </div>
 
   </div>
+</div></div>
 
 </div>
 <footer>
@@ -237,6 +246,7 @@
 <script>
 function tocJump(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}
 (function(){const secs=['vip-perks','vip-valley','vip-tower','vip-battle'];const btns=document.querySelectorAll('.toc-btn');window.addEventListener('scroll',()=>{let cur=secs[0];secs.forEach(id=>{const el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<120)cur=id;});btns.forEach((b,i)=>b.classList.toggle('active',secs[i]===cur));},{passive:true});})();
+(function(){const bs=document.querySelectorAll('.left-toc-btn[data-sec]');const ids=['vip-perks','vip-valley','vip-tower','vip-battle'];window.addEventListener('scroll',()=>{let c=ids[0];ids.forEach(id=>{const el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<120)c=id;});bs.forEach(b=>b.classList.toggle('active',b.dataset.sec===c));},{passive:true});})();
 </script>
 <button id="backToTop" title="回到頂部">&#8679;</button>
 </body></html>

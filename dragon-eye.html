@@ -85,7 +85,13 @@
 </nav>
 
 <div class="container" style="padding-top:8px;padding-bottom:80px;">
-
+<div class="page-layout">
+<nav class="left-toc">
+  <div class="left-toc-heading">章節目錄</div>
+  <button class="left-toc-btn active" data-sec="four" onclick="jumpTo('four')">🐉 四龍之魔眼</button>
+  <button class="left-toc-btn" data-sec="combined" onclick="jumpTo('combined')">✨ 合成魔眼</button>
+</nav>
+<div class="page-main">
   <!-- 四龍之魔眼 -->
   <div class="eye-section-block" id="four">
     <div class="eye-section-title title-blue">🐉 四龍之魔眼</div>
@@ -223,6 +229,7 @@
       </div>
     </div>
   </div>
+</div></div>
 
 </div>
 <footer>
@@ -281,5 +288,8 @@ window.addEventListener('scroll', () => {
 });
 </script>
 <script src="main.js"></script>
+<script>
+(function(){const bs=document.querySelectorAll('.left-toc-btn[data-sec]');const ids=['four','combined'];window.addEventListener('scroll',()=>{let c=ids[0];ids.forEach(id=>{const el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<120)c=id;});bs.forEach(b=>b.classList.toggle('active',b.dataset.sec===c));},{passive:true});})();
+</script>
 <button id="backToTop" title="回到頂部">&#8679;</button>
 </body></html>

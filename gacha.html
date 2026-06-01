@@ -21,6 +21,7 @@
     .prize-item{background:#2a1040;border:1px solid rgba(147,52,230,.5);border-radius:6px;padding:10px 16px;text-align:center}
     .prize-item-name{color:#ce93d8;font-weight:bold;font-size:.95em}
     .prize-item-sub{color:var(--text-muted);font-size:.82em;margin-top:4px}
+    html{scroll-padding-top:120px;}
   </style>
 </head>
 <body>
@@ -40,9 +41,16 @@
 </div>
 
 <div class="container" style="padding-top:40px;padding-bottom:80px;background:#0a0808">
+<div class="page-layout">
+<nav class="left-toc">
+  <div class="left-toc-heading">本頁目錄</div>
+  <a class="left-toc-btn active" data-sec="gacha-jackpot" href="#gacha-jackpot">🏆 特殊大獎</a>
+  <a class="left-toc-btn" data-sec="gacha-list" href="#gacha-list">📋 內容物清單</a>
+</nav>
+<div class="page-main">
 
   <!-- 特殊大獎 -->
-  <h3 style="color:var(--gold);border-left:4px solid var(--accent);padding-left:10px;margin-bottom:16px">🏆 特殊大獎</h3>
+  <h3 id="gacha-jackpot" style="color:var(--gold);border-left:4px solid var(--accent);padding-left:10px;margin-bottom:16px">🏆 特殊大獎</h3>
   <div class="grand-prize-box">
     <div class="grand-prize-title">✨ 以下道具為稀有特殊大獎，歡迎挑戰！</div>
     <div class="prize-items">
@@ -66,7 +74,7 @@
   </div>
 
   <!-- 詳細內容物清單 -->
-  <h3 style="color:var(--gold);border-left:4px solid var(--accent);padding-left:10px;margin-bottom:16px">📋 詳細內容物清單</h3>
+  <h3 id="gacha-list" style="color:var(--gold);border-left:4px solid var(--accent);padding-left:10px;margin-bottom:16px">📋 詳細內容物清單</h3>
   <div style="color:var(--text-muted);font-size:.88em;margin-bottom:12px">
     <span style="display:inline-block;margin-right:16px"><span class="prob-badge prob-high">橘色</span> = 高機率</span>
     <span style="display:inline-block;margin-right:16px"><span class="prob-badge prob-mid">綠色</span> = 中機率</span>
@@ -205,6 +213,7 @@
     </ul>
   </div>
 
+</div></div>
 </div>
 <footer>
   <div class="footer-inner">
@@ -241,5 +250,16 @@
   </div>
 </footer>
 <script src="main.js"></script>
+<script>
+(function(){
+  const btns=document.querySelectorAll('.left-toc-btn[data-sec]');
+  const ids=['gacha-jackpot','gacha-list'];
+  window.addEventListener('scroll',function(){
+    let cur=ids[0];
+    ids.forEach(function(id){var el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<120)cur=id;});
+    btns.forEach(function(b){b.classList.toggle('active',b.dataset.sec===cur);});
+  },{passive:true});
+})();
+</script>
 <button id="backToTop" title="回到頂部">&#8679;</button>
 </body></html>

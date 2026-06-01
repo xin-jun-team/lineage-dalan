@@ -96,7 +96,19 @@
   <button class="nav-btn"        onclick="jumpTo('rome')">🏛️ 羅馬地圖</button>
 </nav>
 <div class="container" style="padding-top:8px;padding-bottom:80px">
-
+<div class="page-layout">
+<nav class="left-toc">
+  <div class="left-toc-heading">章節目錄</div>
+  <button class="left-toc-btn active" data-sec="general" onclick="jumpTo('general')">⚔️ 一般地監</button>
+  <button class="left-toc-btn" data-sec="fantasy" onclick="jumpTo('fantasy')">🦄 夢幻之島</button>
+  <button class="left-toc-btn" data-sec="rift" onclick="jumpTo('rift')">🌀 時空裂痕</button>
+  <button class="left-toc-btn" data-sec="tower" onclick="jumpTo('tower')">🗼 傲慢之塔</button>
+  <button class="left-toc-btn" data-sec="advanced" onclick="jumpTo('advanced')">🔥 高階地圖</button>
+  <button class="left-toc-btn" data-sec="vip" onclick="jumpTo('vip')">👑 VIP 專區</button>
+  <button class="left-toc-btn" data-sec="mastery" onclick="jumpTo('mastery')">❄️ 專精地圖</button>
+  <button class="left-toc-btn" data-sec="rome" onclick="jumpTo('rome')">🏛️ 羅馬地圖</button>
+</nav>
+<div class="page-main">
   <!-- ===== 一般地監 ===== -->
   <div class="section-block" id="general">
     <div class="map-sec-title blue">⚔️ 一般地監（初 / 中階）</div>
@@ -537,6 +549,7 @@
       </div>
     </div>
   </div>
+</div></div>
 
 </div>
 <footer>
@@ -595,5 +608,8 @@ window.addEventListener('scroll', () => {
 });
 </script>
 <script src="main.js"></script>
+<script>
+(function(){const bs=document.querySelectorAll('.left-toc-btn[data-sec]');const ids=['general','fantasy','rift','tower','advanced','vip','mastery','rome'];window.addEventListener('scroll',()=>{let c=ids[0];ids.forEach(id=>{const el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<120)c=id;});bs.forEach(b=>b.classList.toggle('active',b.dataset.sec===c));},{passive:true});})();
+</script>
 <button id="backToTop" title="回到頂部">&#8679;</button>
 </body></html>
